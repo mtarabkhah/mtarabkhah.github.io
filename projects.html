@@ -59,14 +59,119 @@
 										<h2><a href="https://github.com/mtarabkhah?tab=repositories&q=&type=&language=python&sort="target="_blank">Python<br />Projects</h2>
 									</header>
 									<a href="https://github.com/mtarabkhah?tab=repositories&q=&type=&language=python&sort="target="_blank" class="image fit"><img src="images/python-programming.jpg" alt="" /></a>
-									<p>
+									<!-- <p>
 										<ul>
 											<li><a href="https://github.com/mtarabkhah/GasSolidReactionInPorousMeida"target="_blank">Simulation of Gas-Solid Reaction In Porous Meida</a></li>
 											<li><a href="https://github.com/mtarabkhah/English-Pronunciation-Practice-Assistant"target="_blank">English Pronunciation Practice Assistant</a></li>
 											<li><a href="https://github.com/mtarabkhah/YouTube-Downloader"target="_blank">YouTube Downloader</a></li>
 										</ul>
-									</p>
-									<!-- <ul class="actions special">
+									</p> -->
+									<div id="link-list">
+										<ul class="link-list-ul">
+											<li><a href="https://github.com/mtarabkhah/GasSolidReactionInPorousMeida" target="_blank">Simulation of Gas-Solid Reaction In Porous Meida</a></li>
+											<li><a href="https://github.com/mtarabkhah/English-Pronunciation-Practice-Assistant" target="_blank">English Pronunciation Practice Assistant</a></li>
+											<li><a href="https://github.com/mtarabkhah/Financial-Calculator" target="_blank">Financial Calculator</a></li>
+										</ul>
+									</div>
+									
+									<footer>
+										<div class="pagination">
+											<a href="#" class="previous" onclick="changeLinks('previous', event)">Previous</a>
+											<a href="#" class="page active" onclick="changeLinks(1, event)">1</a>
+											<!-- <a href="#" class="page" onclick="changeLinks(2, event)">2</a> -->
+											<a href="#" class="next" onclick="changeLinks('next', event)">Next</a>
+										</div>
+									</footer>
+									
+									<style>
+										#link-list .link-list-ul {
+											list-style: none;
+											padding: 0;
+											margin: 0;
+										}
+									
+										#link-list .link-list-ul li {
+											text-align: left;
+										}
+									
+										.pagination .page.active {
+											font-weight: bold;
+										}
+									</style>
+									
+									<script>
+										var texts = ["Simulation of Gas-Solid Reaction In Porous Meida", 
+										"English Pronunciation Practice Assistant", 
+										"Financial Calculator",
+										"YouTube Downloader", 
+										"Duplicate File Remover"];
+										var hrefs = ["https://github.com/mtarabkhah/GasSolidReactionInPorousMeida", 
+										"https://github.com/mtarabkhah/English-Pronunciation-Practice-Assistant", 
+										"https://github.com/mtarabkhah/Financial-Calculator", 
+										"https://github.com/mtarabkhah/YouTube-Downloader", 
+										"https://github.com/mtarabkhah/Duplicate_File_Remover"];
+										var currentPage = 1;
+										var startPage = 1; // Starting page number for display
+									
+										function changeLinks(page, event) {
+											event.preventDefault(); // Prevent default anchor behavior
+									
+											var linkList = document.getElementById('link-list');
+											var links = linkList.getElementsByTagName('a');
+									
+											if (page === 'previous') {
+												currentPage = Math.max(currentPage - 1, 1);
+												startPage = Math.max(startPage - 1, 1);
+											} else if (page === 'next') {
+												currentPage = Math.min(currentPage + 1, Math.ceil(texts.length / 3));
+												startPage = Math.min(startPage + 1, currentPage);
+											} else {
+												currentPage = page;
+												startPage = Math.max(page - 1, 1);
+											}
+									
+											var start = (currentPage - 1) * 3; // Assuming 3 links per page
+									
+											for (var i = 0; i < links.length; i++) {
+												var linkIndex = i + start;
+												if (linkIndex < texts.length) {
+													links[i].innerHTML = texts[linkIndex];
+													links[i].href = hrefs[linkIndex];
+													links[i].style.display = 'block';
+												} else {
+													links[i].innerHTML = ''; // Remove link text
+													links[i].href = ''; // Remove link href
+												}
+											}
+									
+											updatePagination(); // Update the pagination numbers
+											updateActivePage(); // Update the active page
+										}
+									
+										function updatePagination() {
+											var pages = document.getElementsByClassName('page');
+									
+											for (var i = 0; i < pages.length; i++) {
+												var pageNumber = i + startPage;
+												pages[i].innerHTML = pageNumber;
+											}
+										}
+									
+										function updateActivePage() {
+											var pages = document.getElementsByClassName('page');
+									
+											for (var i = 0; i < pages.length; i++) {
+												var pageNumber = i + startPage;
+												if (pageNumber === currentPage) {
+													pages[i].classList.add('active');
+												} else {
+													pages[i].classList.remove('active');
+												}
+											}
+										}
+									</script>
+									
+										<!-- <ul class="actions special">
 										<li><a href="#" class="button">Full Story</a></li>
 									</ul> -->
 								</article>
@@ -75,9 +180,14 @@
 										<h2><a href="https://github.com/mtarabkhah?tab=repositories&q=&type=&language=matlab&sort="target="_blank">Matlab<br />Projects</h2>
 									</header>
 									<a href="https://github.com/mtarabkhah?tab=repositories&q=&type=&language=matlab&sort="target="_blank" class="image fit"><img src="images/matlab_programming.jpg" alt="" /></a>
-									<p>
-										<li><a href="https://github.com/mtarabkhah/GUI_GasSolidReactionInPorousMedia"target="_blank">GUI for Simulation of Gas-Solid Reaction In Porous Media</a></li>
-									</p>
+									<div id="link-list">
+										<ul class="link-list-ul">
+											<li><a href="https://github.com/mtarabkhah/GUI_GasSolidReactionInPorousMedia"target="_blank">GUI for Simulation of Gas-Solid Reaction In Porous Media</a></li>
+										</ul>
+									</div>
+
+									
+
 									<!-- <ul class="actions special">
 										<li><a href="#" class="button">Full Story</a></li>
 									</ul> -->
@@ -88,6 +198,8 @@
 									</header>
 									<a href="#" class="image fit"><img src="images/Stay Tuned.JPG" alt="" /></a>
 									<p>List of C++ projects</p>
+									
+									
 									<!-- <ul class="actions special">
 										<li><a href="#" class="button">Full Story</a></li>
 									</ul> -->
@@ -103,22 +215,6 @@
 									</ul> -->
 								</article>								
 							</section>
-
-					<!-- Footer -->
-						<footer>
-							<div class="pagination">
-								<!--<a href="#" class="previous">Prev</a>-->
-								<a href="#" class="page active">1</a>
-								<a href="#" class="page">2</a>
-								<a href="#" class="page">3</a>
-								<span class="extra">&hellip;</span>
-								<a href="#" class="page">8</a>
-								<a href="#" class="page">9</a>
-								<a href="#" class="page">10</a>
-								<a href="#" class="next">Next</a>
-							</div>
-						</footer>
-
 
 					</div>
 
